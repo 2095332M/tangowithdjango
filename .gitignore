@@ -1,6 +1,6 @@
 __pycache__/
 *.py[cod]
-*.sqllite3
+*.sqlite3
 
 # Build folder and log file
 build/
