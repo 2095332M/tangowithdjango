@@ -1,20 +1,12 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 
-{% load static  %}
+{% load staticfiles %}
 
-<html>
+{% block title %}About{% endblock %}
 
-    <head>
-        <title>About</title>
-        <link rel="stylesheet" href="{% static "css/base.css" %}" /> <!-- CSS -->
-        <script src="{% static "js/jquery.js" %}"></script> <!-- JavaScript -->
-    </head>
-
-    <body>
+{% block body_block %}
         <h1>About</h1>
         This page was created by Stuart Mackle, 2095332<br />
-        <a href="/rango/">Index</a><br />
         <img src="{% static "images/nicage.jpg" %}" alt="One true god" / >
-    </body>
+{% endblock %}
 
-</html>

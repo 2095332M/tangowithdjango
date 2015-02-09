@@ -17,7 +17,7 @@ from rango.forms import UserForm, UserProfileForm
 
 @login_required
 def restricted(request):
-    return HttpResponse("Since you're logged in, you can see this text!")
+    return render(request, 'rango/restricted.html')
 
 def register(request):
     
