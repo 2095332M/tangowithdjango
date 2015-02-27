@@ -4,19 +4,25 @@
 
 {% block title %}{{ category_name }}{% endblock %}
 {% block body_block %}
+
+<div class="page-header">
     <h1>{{ category_name }}</h1>
+    </div>
     {% if category %}
         {% if pages %}
         <ul>
-             {% for page in pages %}
-             <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-            {% endfor %}
-        </ul>
+                {% for page in pages %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+                </ul>
         {% else %}
-            <strong>No pages currently in category.</strong>
+                <strong>No pages currently in category.</strong>
         {% endif %}
-        <li><a href="/rango/category/{{category_name_slug}}/add_page">{{ "Add page" }}</a></li>
+
+        {% if user.is_authenticated %}
+                <a href="{% url 'add_page' category.slug %}">Add a Page</a>
+        {% endif %}
     {% else %}
-        The specified category {{ category_name }} does not exist!
+        The category {{ category_name }} does not exist.
     {% endif %}
 {% endblock %}
