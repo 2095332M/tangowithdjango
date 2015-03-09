@@ -25,7 +25,7 @@ LOGIN_URL = '/accounts/login/'
 SECRET_KEY = '!lq8v@@+h*)q*=zy3!j!33831hkh2q=*_k9_%!0c&*3*pbi5us'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #Template paths
 TEMPLATE_DEBUG = True
@@ -38,7 +38,7 @@ TEMPLATE_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

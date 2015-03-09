@@ -319,14 +319,15 @@ def edit_profile(request):
                 if 'website' in user_profile_form.cleaned_data:
                     user_profile.website = user_profile_form.cleaned_data['website']
                 user_profile.save()
-        
+    
 
-        return redirect('/rango/profile')
+        return redirect('rango/profile')
     else:
         user_profile_form = UserProfileForm()
     return render(request,'rango/edit_profile.html', {'profile_form': user_profile_form})
 
-
+def bad_request(request):
+    return render(request,'rango/bad_request.html')
 
 def about(request):
     
