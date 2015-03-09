@@ -1,0 +1,28 @@
+{% extends "rango/base.html" %}
+
+{% block body_block %}
+	<div class="page-header">
+		<h1>Profile</h1>
+	</div>
+	
+	<div>
+        <li>Username: {{user.username}}</li>
+        <li>Email: {{user.email}}</li>
+		
+        {% if userprofile.website %}
+            <li>Website: <a href = "{{userprofile.website}}">{{userprofile.website}}</a></li>
+        {% else %}
+            User has no website
+        {% endif %}
+			
+        {% if userprofile.picture %}
+            <li>Picture: <img src="{{userprofile.picture.url}}" alt = "Your Picture" /></li>
+        {% else %}
+            User has no profile picture
+        {% endif %}
+	</div>
+    <div>
+        <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+    </div>
+
+{% endblock %}
