@@ -227,7 +227,7 @@ def category(request, category_name_slug):
     context_dict['result_list'] = None
     context_dict['query'] = category.name
     if request.method == 'POST':
-        query = request.POST['query'].strip()
+        query = request.POST.get('query', '').strip()
         
         if query:
             # Run our Bing function to get the results list!
@@ -325,6 +325,8 @@ def edit_profile(request):
     else:
         user_profile_form = UserProfileForm()
     return render(request,'rango/edit_profile.html', {'profile_form': user_profile_form})
+
+
 
 def about(request):
     
